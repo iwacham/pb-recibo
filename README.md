@@ -12,6 +12,7 @@ HTML
 	recibo.html
 
 CSS: adjuntar la hoja de estilos en el head
+
 	<head>
 		<link rel="stylesheet" href="recibo.css">
 	</head>
@@ -22,9 +23,13 @@ el logo del recibo debe llamarse logo.gif y tener un tamaño de 208x85
 
 ## Navegadores compatibles
 Chrome 6+
+
 Firefox 4+
+
 Safari 5+
+
 Opera 11+
+
 Internet Explorer 9+
 
 ## Licencia
