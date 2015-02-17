@@ -22,26 +22,15 @@ body, html{
   button, #botonera{display:none;}
 }
 
-.bordeRecibo{border:1px solid #000000;margin:0;padding:0;height:100%;position:relative;} /*Para que el footer llegue hasta abajo*/
+.bordeRecibo{border:1px solid #000000;margin:0;padding:0;height:100%;position:relative;width: 45%;float:left;}
+.bordeRecibo + .bordeRecibo{float: right;}
 .bordeRecibo section{padding:20px;}
-
-.original, .duplicado{
-  width: 45%;
-  
-}
-
-.original{
-  float: left;
-}
-.duplicado{
-  float: right;
-}
 
 header{height:17%;border-bottom:1px solid #000000;}
 header>div{float:left;padding-top:8px;}
 header div.left, header div.right{width:40%;}
 header div.center{width:calc(20% - 2px);border-left:1px solid #000000; border-right:1px solid #000000;}
-header img{width: 100%;margin-bottom:2px}
+header img{width: 100%;margin-bottom:12px}
 section{padding-top:20px;padding-bottom:20px;}
 section, pre{margin:0px;}
 
@@ -61,14 +50,14 @@ footer{position:absolute; bottom:0;left:0;right:0;padding-top:20px;} /*Para que 
 
 .pull-right{position:absolute;right:0;}
 
-#originalDuplicado{line-height: 200%;}
-#tipoComprobante{font-size:30px;line-height: 30px;}
+#lblOriginalDuplicado{line-height: 200%;}
 #leyendaTipoComprobante{font-size:10px;}
 #tipoComprobante, #lblComprobante{margin:0;}
 #lblComprobante{line-height:18px;}
+#tipoComprobante{font-size:30px;line-height: 30px;margin-bottom: 10px;}
 #lblNroCmp{line-height:200%;}
 #hr{width:30%;border-top:1px solid #000000;height:1px;position:absolute;right:20px;}
-#firma{padding-top:30mm;position:relative;}
+#firma{padding-top:15mm;position:relative;}
 #firma p{margin:4px 0 2px 0;font-size: 10px;}
 
 .importeEnPesos:before{content:'$';}
