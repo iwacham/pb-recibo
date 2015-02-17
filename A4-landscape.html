@@ -1,109 +1,107 @@
 <html lang="es">
 <head>
-	<link rel="stylesheet" href="recibo.css">
+	<link rel="stylesheet" href="landscape.css">
 </head>
 
 <body>
-	<div id="botonera">
-		<button onClick="javascript:window.print();">Imprimir</button>
-	</div>
+  <div id="page">
+    <div class="original bordeRecibo">
+      <header>	
+        <!-- Lado Izquierdo -->
+        <div class="column left">
+            <div class="container">
+                <div class="row">
+                    <img src="logo-landscape.gif">
+                </div>
+                <div class="row text-left h3 negrita">Mi Empresa</div>
+                <div class="row text-left h3">Slogan de mi empresa</div>
+                <div class="row text-left h3">Direccion</div>
+                <div class="row text-left h3">Telefono</div>
+            </div>
+        </div>
 
-	<div id="page1">
+        <!-- Lado Central -->
+        <div class="column center text-center"> <span id="tipoComprobante">X</span> 
+            <br>
+            <span id="leyendaTipoComprobante" class="preimpreso">DOCUMENTO<br>NO VALIDO<br>COMO<br>FACTURA</span> 
+        </div>
 
-		<div class="bordeRecibo">
-			<header>
-				
-				<!-- Lado Izquierdo -->
-				<div class="column left">
-					<div class="container">
-						<div class="row text-left">
-							<img src="logo.gif" alt="logo" width="208" height="85">
-						</div>
-						<div class="row text-left negrita h3">Mi Empresa</div>
-						<div class="row text-left h3">Slogan de mi empresa</div>
-						<div class="row text-left h3">Direccion</div>
-						<div class="row text-left h3">Telefono</div>
-					</div>
-				</div>
-				
-				<!-- Lado Central -->
-				<div class="column center text-center"> <span id="tipoComprobante">X</span> 
-					<br>
-					<span id="leyendaTipoComprobante" class="preimpreso">DOCUMENTO<br>NO VALIDO<br>COMO<br>FACTURA</span> 
-				</div>
-				
-				<!-- Lado Derecho -->
-				<div class="column right">
-					<div class="container">
-						<div id="lblComprobante" class="row text-center negrita h1">RECIBO</div>
-						<div id="lblNroCmp" class="row text-center negrita h2"><span class="preimpreso">Nro</span> 0001 - 00000168</div>
-						<div class="row text-center h3">ORIGINAL</div>
-						<div class="row text-center h3">&nbsp;</div>
-						<div class="row text-left h3">FECHA <span class="pull-right">12/11/2013</span></div>
-						<div class="row text-left h3">CUIT <span class="pull-right">22-22222222-2</span></div>
-						<div class="row text-left h3">INGRESOS BRUTOS <span class="pull-right">33-33333333-3</span></div>
-						<div class="row text-left h3">INICIO DE ACTIVIDADES <span class="pull-right">01/01/1759</span></div>
-					</div>
-				</div>
-			</header>
-			
-			<section>Rosario, 11 de Noviembre de 2013
-				<br>
-				<br>
-				<span class="preimpreso">Recibimos de</span> El Chapulin Colorado
-				<br>
-				<span class="preimpreso">la cantidad de </span><span id="importeEnLetras">QUINIENTOS CUARENTA Y CINTO MIL PESOS</span> 
-			</section>
-			
-			<section id="sectionMedioPago">
-				<span class="preimpreso">Mediante</span> 
-				<div class="row">
-					<span>Efectivo</span>
-					<span class="pull-right negrita importeEnPesos">500.000</span>
-				</div>
-				<div class="row">
-					<span>Transferencia Bancaria</span>
-					<span class="pull-right negrita importeEnPesos">45.000</span>
-				</div>
-			</section>
-			
-			<section>
-				<span class="preimpreso">En concepto de</span>
-				<div class="row">
-					<span>Escudo de Coraz&oacute;n</span>
-					<span name="a" class="pull-right negrita importeEnPesos">12.900</span>
-				</div>
-				<div class="row">
-					<span>Chipote chill&oacute;n</span>
-					<span name="a" class="pull-right negrita importeEnPesos">45.000</span>
-				</div>
-				<div class="row">
-					<span>Pastillas de Chiquitolina</span>
-					<span name="a" class="pull-right negrita importeEnPesos">500</span>
-				</div>
-				<div class="row">
-					<span>Antenitas de vinil</span>
-					<span name="a" class="pull-right negrita importeEnPesos">37</span>
-				</div>
-				<div class="row">
-					<span>Chicharra Paralizadora</span>
-					<span name="a" class="pull-right negrita importeEnPesos">486.563</span>
-				</div>
-			</section>
-			
-			<footer>
-				
-				<section id="son"> <span class="preimpreso">SON:</span> 
-					<output id="totalRecibo" class="negrita importeEnPesos">545.000</output> 
-				</section>
-				
-				<section id="firma">
-					<div id="hr" class="pull-right">&nbsp;</div>
-					<p class="text-right">Mi Empresa</p>
-				</section>
-				
-			</footer>
-		</div><!-- bordeRecibo -->
-	</div><!-- Page1 -->
+        <!-- Lado Derecho -->
+        <div class="column right">
+            <div class="container">
+                <div id="lblComprobante" class="row text-center negrita h1">RECIBO</div>
+                <div id="lblNroCmp" class="row text-center negrita h3"><span class="preimpreso">Nro</span> 0001 - 00000168</div>
+                <div id="originalDuplicado" class="row text-center h3">ORIGINAL</div>
+                <div class="row text-left h3">FECHA <span class="pull-right">12/11/2013</span></div>
+                <div class="row text-left h3">CUIT <span class="pull-right">22-22222222-2</span></div>
+                <div class="row text-left h3">IIBB <span class="pull-right">33-33333333-3</span></div>
+                <div class="row text-left h3">INI DE ACT <span class="pull-right">01/01/1759</span></div>
+            </div>
+        </div>
+      </header>
+      
+      <section>Rosario, 11 de Noviembre de 2013
+        <br>
+        <br>
+        <span class="preimpreso">Recibimos de</span> El Chapulin Colorado
+        <br>
+        <span class="preimpreso">la cantidad de </span><span id="importeEnLetras">QUINIENTOS CUARENTA Y CINTO MIL PESOS</span> 
+      </section>
+
+      <section id="sectionMedioPago">
+        <span class="preimpreso">Mediante</span> 
+        <div class="row">
+          <span>Efectivo</span>
+          <span class="pull-right negrita importeEnPesos">500.000</span>
+        </div>
+        <div class="row">
+          <span>Transferencia Bancaria</span>
+          <span class="pull-right negrita importeEnPesos">45.000</span>
+        </div>
+      </section>
+
+      <section>
+        <span class="preimpreso">En concepto de</span>
+        <div class="row">
+          <span>Escudo de Coraz&oacute;n</span>
+          <span name="a" class="pull-right negrita importeEnPesos">12.900</span>
+        </div>
+        <div class="row">
+          <span>Chipote chill&oacute;n</span>
+          <span name="a" class="pull-right negrita importeEnPesos">45.000</span>
+        </div>
+        <div class="row">
+          <span>Pastillas de Chiquitolina</span>
+          <span name="a" class="pull-right negrita importeEnPesos">500</span>
+        </div>
+        <div class="row">
+          <span>Antenitas de vinil</span>
+          <span name="a" class="pull-right negrita importeEnPesos">37</span>
+        </div>
+        <div class="row">
+          <span>Chicharra Paralizadora</span>
+          <span name="a" class="pull-right negrita importeEnPesos">486.563</span>
+        </div>
+      </section>
+
+      <footer>
+        <section id="total">
+          <div class="row text-right">
+            <span class="preimpreso">TOTAL</span>
+            <span class="negrita importeEnPesos">12.900</span>
+          </div>
+        </section>
+
+        <section id="firma">
+            <div id="hr" class="pull-right">&nbsp;</div>
+            <p class="text-right">Mi Empresa</p>
+        </section>
+      </footer>
+    </div>
+
+    <div class="duplicado bordeRecibo">
+      asd
+    </div>
+  </div><!-- Page1 -->
 </body>
 </html>
