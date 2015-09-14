@@ -20,6 +20,7 @@ body, html{
   body{background-color:#FFFFFF;}
   #page{box-shadow:none;padding:10mm;margin:0;width: 267mm;height: 180mm;}
   button, #botonera{display:none;}
+  #formAngular {display:none;}
 }
 
 .bordeRecibo{border:1px solid #000000;margin:0;padding:0;height:100%;position:relative;width: 45%;float:left;}
@@ -80,4 +81,10 @@ button{
 	position:absolute;
 	left:10px;
 	top:10px;
+}
+
+#formAngular {
+  position: relative;
+  float:left;
+  padding: 20px 15% 20px 120px;
 }
