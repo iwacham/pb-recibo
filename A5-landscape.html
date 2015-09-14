@@ -6,40 +6,45 @@
 
 <body>
 	<!-- Angular -->
-	<div>
-    <div class="container">
+	<div id="formAngular">
+    <form>
       <h3>Cabezera de Recibo</h3>
-      <label>Nro de Recibo:</label>
-      <input type="text" ng-model="yourReceipt" placeholder="Enter Nro Receipt">
-      <label>Fecha:</label>
-      <input type="text" ng-model="yourDay" placeholder="Enter dd/mm/aa">
-      <label>Cuit:</label>
-      <input type="text" ng-model="yourCuit" placeholder="Enter 22-22222222-2">
-      <label>IIBB:</label>
-      <input type="text" ng-model="yourIibb" placeholder="Enter 33-33333333-3">
-      <label>INI DE ACT:</label>
-      <input type="text" ng-model="yourInit" placeholder="Enter dd/mm/aa">
-    </div>
-    <div>
+      <hr>
+      <label>Nro de Recibo:</label><br>
+      <input type="text" ng-model="yourReceipt" placeholder="Enter Nro Receipt"><br>
+      <label>Fecha:</label><br>
+      <input type="text" ng-model="yourDay" placeholder="Enter dd/mm/aa"><br>
+      <label>Cuit:</label><br>
+      <input type="text" ng-model="yourCuit" placeholder="Enter 22-22222222-2"><br>
+      <label>IIBB:</label><br>
+      <input type="text" ng-model="yourIibb" placeholder="Enter 33-33333333-3"><br>
+      <label>INI DE ACT:</label><br>
+      <input type="text" ng-model="yourInit" placeholder="Enter dd/mm/aa"><br>
+    </form>
+    <form>
       <h3>Cuerpo del recibo</h3>
-      <label>Recivo de:</label>
-      <input type="text" ng-model="yourReceiptName" placeholder="Enter name">
-      <label>Cantidad:</label>
-      <input type="text" ng-model="yourAmount" placeholder="Enter amount">
-      <label>En concepto de:</label>
-      <input type="text" ng-model="yourConcept" placeholder="Enter date">
-    </div>
-    <div>
+      <hr>
+      <label>Recivo de:</label><br>
+      <input type="text" ng-model="yourReceiptName" placeholder="Enter name"><br>
+      <label>Cantidad:</label><br>
+      <input type="text" ng-model="yourAmount" placeholder="Enter amount"><br>
+      <label>En concepto de:</label><br>
+      <input type="text" ng-model="yourConcept" placeholder="Enter date"><br>
+    </form>
+    <form>
       <h4>Medios de pago</h4>
-      <label>Efectivo:</label>
-      <input type="text" ng-model="yourMoney" placeholder="Enter amount">
-      <label>Transferencia Bancaria:</label>
-      <input type="text" ng-model="yourTransfer" placeholder="Enter amount">
-      <label>Dep&oacute;sito:</label>
-      <input type="text" ng-model="yourDeposit" placeholder="Enter amount">
-      <label>Cheque:</label>
-      <input type="text" ng-model="yourCheque" placeholder="Enter amount">
-    </div>
+      <hr>
+      <label>Efectivo:</label><br>
+      <input type="text" ng-model="yourMoney" placeholder="Enter amount"><br>
+      <label>Transferencia Bancaria:</label><br>
+      <input type="text" ng-model="yourTransfer" placeholder="Enter amount"><br>
+      <label>Dep&oacute;sito:</label><br>
+      <input type="text" ng-model="yourDeposit" placeholder="Enter amount"><br>
+      <label>Cheque:</label><br>
+      <input type="text" ng-model="yourCheque" placeholder="Enter amount"><br>
+      <label>Total:</label><br>
+      <input type="text" ng-model="yourTotal" placeholder="Enter amount"><br>
+    </form>
 	</div>
 		
 	<div id="page">
@@ -112,7 +117,7 @@
         <section id="total">
           <div class="row text-right">
             <span class="preimpreso">TOTAL</span>
-            <span class="negrita importeEnPesos">12.900</span>
+            <span class="negrita importeEnPesos">{{yourTotal}}</span>
           </div>
         </section>
 
