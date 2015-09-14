@@ -49,7 +49,7 @@ footer{position:absolute; bottom:0;left:0;right:0;padding-top:20px;} /*Para que 
 .h3{font-size:10px;}
 .container{margin:0 10px 0 10px;}
 .importeEnPesos:before{content:'$';}
-.col-6{width: 50%;float: left;}
+.col-6{width: 100%;float: left;}
 .hr{width:30%;border-top:1px solid #000000;height:1px;position:absolute;}
 .pull-right{position:absolute;right:0;}
 
