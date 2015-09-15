@@ -90,19 +90,19 @@
 
       <section id="sectionMedioPago">
         <span class="preimpreso">Mediante</span> 
-        <div class="row">
+        <div class="row" ng-show="yourMoney">
           <span>Efectivo</span>
           <span class="pull-right negrita importeEnPesos">{{yourMoney}}</span>
         </div>
-        <div class="row">
+        <div class="row" ng-show="yourTransfer">
           <span>Transferencia Bancaria</span>
           <span class="pull-right negrita importeEnPesos">{{yourTransfer}}</span>
         </div>
-        <div class="row">
+        <div class="row" ng-show="yourDeposit">
           <span>Dep&oacute;sito</span>
           <span class="pull-right negrita importeEnPesos">{{yourDeposit}}</span>
         </div>
-        <div class="row">
+        <div class="row" ng-show="yourCheque">
           <span>Cheque</span>
           <span class="pull-right negrita importeEnPesos">{{yourCheque}}</span>
         </div>
