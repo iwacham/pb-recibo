@@ -46,10 +46,10 @@
       <input type="text" ng-model="yourCheque" placeholder="Enter amount"><br>
     </form>
 	</div>
-		
+
 	<div id="page">
     <div class="original bordeRecibo">
-      <header>	
+      <header>
         <!-- Lado Izquierdo -->
         <div class="column left">
             <div class="container">
@@ -64,8 +64,8 @@
         </div>
 
         <!-- Lado Central -->
-        <div class="column center text-center"> <span id="tipoComprobante">X</span> 
-          <p id="leyendaTipoComprobante" class="preimpreso">DOCUMENTO<br>NO VALIDO<br>COMO<br>FACTURA</p> 
+        <div class="column center text-center"> <span id="tipoComprobante">X</span>
+          <p id="leyendaTipoComprobante" class="preimpreso">DOCUMENTO<br>NO VALIDO<br>COMO<br>FACTURA</p>
         </div>
 
         <!-- Lado Derecho -->
@@ -81,15 +81,15 @@
             </div>
         </div>
       </header>
-      
+
       <section>
         <span class="preimpreso">Recibimos de</span> {{yourReceiptName}}
         <br>
-        <span class="preimpreso">la cantidad de </span><span id="importeEnLetras">{{yourAmount}}</span> 
+        <span class="preimpreso">la cantidad de </span><span id="importeEnLetras">{{yourAmount}}</span>
       </section>
 
       <section id="sectionMedioPago">
-        <span class="preimpreso">Mediante</span> 
+        <span class="preimpreso">Mediante</span>
         <div class="row" ng-show="yourMoney">
           <span>Efectivo</span>
           <span class="pull-right negrita importeEnPesos">{{yourMoney}}</span>
@@ -127,10 +127,10 @@
               <div class="hr pull-right">&nbsp;</div>
             </div>
           </div>
-          
+
           <div class="row">
             <div class="col-6">
-              <p class="text-right">Mi Empresa</p>
+              <p class="text-right">{{yourCompany}}</p>
             </div>
           </div>
         </section>
