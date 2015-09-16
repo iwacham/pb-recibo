@@ -1,19 +1,62 @@
-<html lang="es">
+<html lang="es" ng-app>
 <head>
 	<link rel="stylesheet" href="landscape.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 </head>
 
 <body>
-  <div id="page">
+	<!-- Angular -->
+	<div id="formAngular">
+    <form>
+      <h3>Cabezera de Recibo</h3>
+      <hr>
+      <label>Mi empresa:</label><br>
+      <input type="text" ng-model="yourCompany" placeholder="Enter name"><br>
+      <label>Nro de Recibo:</label><br>
+      <input type="text" ng-model="yourReceipt" placeholder="Enter Nro Receipt"><br>
+      <label>Fecha:</label><br>
+      <input type="text" ng-model="yourDay" placeholder="Enter dd/mm/aa"><br>
+      <label>Cuit:</label><br>
+      <input type="text" ng-model="yourCuit" placeholder="Enter 22-22222222-2"><br>
+      <label>IIBB:</label><br>
+      <input type="text" ng-model="yourIibb" placeholder="Enter 33-33333333-3"><br>
+      <label>INI DE ACT:</label><br>
+      <input type="text" ng-model="yourInit" placeholder="Enter dd/mm/aa"><br>
+    </form>
+    <form>
+      <h3>Cuerpo del recibo</h3>
+      <hr>
+      <label>Recibo de:</label><br>
+      <input type="text" ng-model="yourReceiptName" placeholder="Enter name"><br>
+      <label>Cantidad:</label><br>
+      <input type="text" ng-model="yourAmount" placeholder="Enter amount"><br>
+      <label>En concepto de:</label><br>
+      <input type="text" ng-model="yourConcept" placeholder="Enter date"><br>
+    </form>
+    <form>
+      <h4>Medios de pago</h4>
+      <hr>
+      <label>Efectivo:</label><br>
+      <input type="text" ng-model="yourMoney" placeholder="Enter amount"><br>
+      <label>Transferencia Bancaria:</label><br>
+      <input type="text" ng-model="yourTransfer" placeholder="Enter amount"><br>
+      <label>Dep&oacute;sito:</label><br>
+      <input type="text" ng-model="yourDeposit" placeholder="Enter amount"><br>
+      <label>Cheque:</label><br>
+      <input type="text" ng-model="yourCheque" placeholder="Enter amount"><br>
+    </form>
+	</div>
+
+	<div id="page">
     <div class="original bordeRecibo">
-      <header>	
+      <header>
         <!-- Lado Izquierdo -->
         <div class="column left">
             <div class="container">
                 <div class="row">
-                    <img src="logo-landscape.gif">
+                    <img src="logo-sinaptica.png" width="148" height="60">
                 </div>
-                <div class="row text-left h3 negrita">Mi Empresa</div>
+                <div class="row text-left h3 negrita">{{yourCompany}}</div>
                 <div class="row text-left h3">Slogan de mi empresa</div>
                 <div class="row text-left h3">Direccion</div>
                 <div class="row text-left h3">Telefono</div>
@@ -21,232 +64,73 @@
         </div>
 
         <!-- Lado Central -->
-        <div class="column center text-center"> <span id="tipoComprobante">X</span> 
-          <p id="leyendaTipoComprobante" class="preimpreso">DOCUMENTO<br>NO VALIDO<br>COMO<br>FACTURA</p> 
+        <div class="column center text-center"> <span id="tipoComprobante">X</span>
+          <p id="leyendaTipoComprobante" class="preimpreso">DOCUMENTO<br>NO VALIDO<br>COMO<br>FACTURA</p>
         </div>
 
         <!-- Lado Derecho -->
         <div class="column right">
             <div class="container">
                 <div id="lblComprobante" class="row text-center negrita h1">RECIBO</div>
-                <div id="lblNroCmp" class="row text-center negrita h3"><span class="preimpreso">Nro</span> 0001 - 00000168</div>
+                <div id="lblNroCmp" class="row text-center negrita h3"><span class="preimpreso">Nro</span> {{yourReceipt}}</div>
                 <div id="lblOriginalDuplicado" class="row text-center h3">ORIGINAL</div>
-                <div class="row text-left h3">FECHA <span class="pull-right">12/11/2013</span></div>
-                <div class="row text-left h3">CUIT <span class="pull-right">22-22222222-2</span></div>
-                <div class="row text-left h3">IIBB <span class="pull-right">33-33333333-3</span></div>
-                <div class="row text-left h3">INI DE ACT <span class="pull-right">01/01/1759</span></div>
+                <div class="row text-left h3">FECHA <span class="pull-right">{{yourDay}}</span></div>
+                <div class="row text-left h3">CUIT <span class="pull-right">{{yourCuit}}</span></div>
+                <div class="row text-left h3">IIBB <span class="pull-right">{{yourIibb}}</span></div>
+                <div class="row text-left h3">INI DE ACT <span class="pull-right">{{yourInit}}</span></div>
             </div>
         </div>
       </header>
-      
+
       <section>
-        <span class="preimpreso">Recibimos de</span> El Chapulin Colorado
+        <span class="preimpreso">Recibimos de</span> {{yourReceiptName}}
         <br>
-        <span class="preimpreso">la cantidad de </span><span id="importeEnLetras">QUINIENTOS CUARENTA Y CINTO MIL PESOS</span> 
+        <span class="preimpreso">la cantidad de </span><span id="importeEnLetras">{{yourAmount}}</span>
       </section>
 
       <section id="sectionMedioPago">
-        <span class="preimpreso">Mediante</span> 
-        <div class="row">
+        <span class="preimpreso">Mediante</span>
+        <div class="row" ng-show="yourMoney">
           <span>Efectivo</span>
-          <span class="pull-right negrita importeEnPesos">500.000</span>
+          <span class="pull-right negrita importeEnPesos">{{yourMoney}}</span>
         </div>
-        <div class="row">
+        <div class="row" ng-show="yourTransfer">
           <span>Transferencia Bancaria</span>
-          <span class="pull-right negrita importeEnPesos">45.000</span>
+          <span class="pull-right negrita importeEnPesos">{{yourTransfer}}</span>
         </div>
-        <div class="row">
+        <div class="row" ng-show="yourDeposit">
           <span>Dep&oacute;sito</span>
-          <span class="pull-right negrita importeEnPesos">19.211</span>
+          <span class="pull-right negrita importeEnPesos">{{yourDeposit}}</span>
         </div>
-        <div class="row">
+        <div class="row" ng-show="yourCheque">
           <span>Cheque</span>
-          <span class="pull-right negrita importeEnPesos">119</span>
+          <span class="pull-right negrita importeEnPesos">{{yourCheque}}</span>
         </div>
       </section>
 
       <section>
-        <span class="preimpreso">En concepto de</span>
-        <div class="row">
-          <span>Hotel</span>
-          <span name="a" class="pull-right negrita">Esplendor Savoy Rosario</span>
-        </div>
-        <div class="row">
-          <span>R&eacute;gimen</span>
-          <span name="a" class="pull-right negrita">Media pensi&oacute;n</span>
-        </div>
-        <div class="row">
-          <span>Salida</span>
-          <span name="a" class="pull-right negrita">23/01/2012</span>
-        </div>
-        <div class="row">
-          <span>Duracion</span>
-          <span name="a" class="pull-right negrita ">10 dias / 8 noches</span>
-        </div>
-        <div class="row">
-          <span>Destino</span>
-          <span name="a" class="pull-right negrita ">Roma, Italia</span>
-        </div>
-        <div class="row">
-          <span>Colegio</span>
-          <span name="a" class="pull-right negrita">Dante Alighieri T.T 5C</span>
-        </div>
-        <div class="row">
-          <span>Fecha de venta</span>
-          <span name="a" class="pull-right negrita">01/01/2014</span>
-        </div>
+        <span class="preimpreso">En concepto de</span><br> {{yourConcept}}
+				<br>
       </section>
 
       <footer>
         <section id="total">
           <div class="row text-right">
             <span class="preimpreso">TOTAL</span>
-            <span class="negrita importeEnPesos">12.900</span>
+            <span class="negrita importeEnPesos">{{yourMoney -- yourTransfer -- yourDeposit -- yourCheque}}</span>
           </div>
         </section>
 
         <section id="firma">
           <div class="row">
             <div class="col-6">
-              <div class="hr">&nbsp;</div>
-            </div>
-            
-            <div class="col-6">
               <div class="hr pull-right">&nbsp;</div>
             </div>
           </div>
-          
-          <div class="row">
-            <div class="col-6">    
-              <p class="text-left">Pasajero</p>
-            </div>
-            
-            <div class="col-6">
-              <p class="text-right">Mi Empresa</p>
-            </div>
-          </div>
-        </section>
-      </footer>
-    </div>
 
-    <div class="duplicado bordeRecibo">
-      <header>	
-        <!-- Lado Izquierdo -->
-        <div class="column left">
-            <div class="container">
-                <div class="row">
-                    <img src="logo-landscape.gif">
-                </div>
-                <div class="row text-left h3 negrita">Mi Empresa</div>
-                <div class="row text-left h3">Slogan de mi empresa</div>
-                <div class="row text-left h3">Direccion</div>
-                <div class="row text-left h3">Telefono</div>
-            </div>
-        </div>
-
-        <!-- Lado Central -->
-        <div class="column center text-center"> <span id="tipoComprobante">X</span> 
-          <p id="leyendaTipoComprobante" class="preimpreso">DOCUMENTO<br>NO VALIDO<br>COMO<br>FACTURA</p> 
-        </div>
-
-        <!-- Lado Derecho -->
-        <div class="column right">
-            <div class="container">
-                <div id="lblComprobante" class="row text-center negrita h1">RECIBO</div>
-                <div id="lblNroCmp" class="row text-center negrita h3"><span class="preimpreso">Nro</span> 0001 - 00000168</div>
-                <div id="lblOriginalDuplicado" class="row text-center h3">DUPLICADO</div>
-                <div class="row text-left h3">FECHA <span class="pull-right">12/11/2013</span></div>
-                <div class="row text-left h3">CUIT <span class="pull-right">22-22222222-2</span></div>
-                <div class="row text-left h3">IIBB <span class="pull-right">33-33333333-3</span></div>
-                <div class="row text-left h3">INI DE ACT <span class="pull-right">01/01/1759</span></div>
-            </div>
-        </div>
-      </header>
-      
-      <section>
-        <span class="preimpreso">Recibimos de</span> El Chapulin Colorado
-        <br>
-        <span class="preimpreso">la cantidad de </span><span id="importeEnLetras">QUINIENTOS CUARENTA Y CINTO MIL PESOS</span> 
-      </section>
-
-      <section id="sectionMedioPago">
-        <span class="preimpreso">Mediante</span> 
-        <div class="row">
-          <span>Efectivo</span>
-          <span class="pull-right negrita importeEnPesos">500.000</span>
-        </div>
-        <div class="row">
-          <span>Transferencia Bancaria</span>
-          <span class="pull-right negrita importeEnPesos">45.000</span>
-        </div>
-        <div class="row">
-          <span>Dep&oacute;sito</span>
-          <span class="pull-right negrita importeEnPesos">19.211</span>
-        </div>
-        <div class="row">
-          <span>Cheque</span>
-          <span class="pull-right negrita importeEnPesos">119</span>
-        </div>
-      </section>
-
-      <section>
-        <span class="preimpreso">En concepto de</span>
-        <div class="row">
-          <span>Hotel</span>
-          <span name="a" class="pull-right negrita">Esplendor Savoy Rosario</span>
-        </div>
-        <div class="row">
-          <span>R&eacute;gimen</span>
-          <span name="a" class="pull-right negrita">Media pensi&oacute;n</span>
-        </div>
-        <div class="row">
-          <span>Salida</span>
-          <span name="a" class="pull-right negrita">23/01/2012</span>
-        </div>
-        <div class="row">
-          <span>Duracion</span>
-          <span name="a" class="pull-right negrita ">10 dias / 8 noches</span>
-        </div>
-        <div class="row">
-          <span>Destino</span>
-          <span name="a" class="pull-right negrita ">Roma, Italia</span>
-        </div>
-        <div class="row">
-          <span>Colegio</span>
-          <span name="a" class="pull-right negrita">Dante Alighieri T.T 5C</span>
-        </div>
-        <div class="row">
-          <span>Fecha de venta</span>
-          <span name="a" class="pull-right negrita">01/01/2014</span>
-        </div>
-      </section>
-
-      <footer>
-        <section id="total">
-          <div class="row text-right">
-            <span class="preimpreso">TOTAL</span>
-            <span class="negrita importeEnPesos">12.900</span>
-          </div>
-        </section>
-
-        <section id="firma">
           <div class="row">
             <div class="col-6">
-              <div class="hr">&nbsp;</div>
-            </div>
-            
-            <div class="col-6">
-              <div class="hr pull-right">&nbsp;</div>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-6">    
-              <p class="text-left">Pasajero</p>
-            </div>
-            
-            <div class="col-6">
-              <p class="text-right">Mi Empresa</p>
+              <p class="text-right">{{yourCompany}}</p>
             </div>
           </div>
         </section>
